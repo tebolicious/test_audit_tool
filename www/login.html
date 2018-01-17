@@ -507,79 +507,59 @@
 		<!-- End: Right Side Panel -->
 
 		<div class="views">
-			<div class="view view-main" data-page="walkthrough-slide">
+			<div class="view view-main" data-page="login">
 				<div class="pages navbar-fixed">
 					
-					<div data-page="walkthrough" class="page no-navbar">
+					<div data-page="login" class="page no-navbar">
 						<!-- Begin: Page Content -->
             <div class="page-content">
-						<div class="walkthrough">
-							<div class="swiper-container walkthrough-container swiper-container-horizontal">
-								<div class="swiper-wrapper walkthrough-slides" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-									
-									<div id="slide-1" class="swiper-slide walkthrough-slide swiper-slide-active" style="width: 412px;">
-										<div class="slide-title">
-											Welcome to Onsite SHEQ Audit Tool
-										</div>
-										<div class="slide-media">
-											<img src="assets/custom/img/logo.svg">
-										</div>
-										<div class="slide-text">
-											Onsite SHEQ Audit Tool is designed for all SHEQ Auditors aligned with ISO 14001, ISO 45001, ISO 9001, OHSAS 18001 & NOSA CMB 253N. The app is useful for internal audit as well as client company audit.
-										</div>
-									</div>
-
-									<div id="slide-2" class="swiper-slide walkthrough-slide swiper-slide-active" style="width: 412px;">
-										<div class="slide-title">
-											Audit Report Onsite
-										</div>
-										<div class="slide-media">
-											<img src="assets/custom/img/479051631.jpg">
-										</div>
-										<div class="slide-text">
-											Be able to audit on site using your mobile and the audit report its distributed on the cloud.
-										</div>
-									</div>
-
-									<div id="slide-3" class="swiper-slide walkthrough-slide swiper-slide-active" style="width: 412px;">
-										<div class="slide-title">
-											Online Backup
-										</div>
-										<div class="slide-media">
-											<img src="assets/custom/img/online-Backup.png">
-										</div>
-										<div class="slide-text">
-											All audit reports are backed up on the online server which means you can access them any where
-										</div>
-									</div>
-
-									<div id="slide-4" class="swiper-slide walkthrough-slide swiper-slide-active" style="width: 412px;">
-										<div class="slide-title">
-											Report Computation
-										</div>
-										<div class="slide-media">
-											<img src="assets/custom/img/humancomp.jpg">
-										</div>
-										<div class="slide-text">
-											Immediately after completing the audit report the system calculate your result and give you hints on where to go from there
-										</div>
-									</div>
-
-
-								</div>
-
-                                <div class="swiper-pagination walkthrough-pagination swiper-pagination-clickable swiper-pagination-bullets">
-                                	<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
-                                	<spa class="swiper-pagination-bullet"></spa>
-                                	<spa class="swiper-pagination-bullet"></spa>
-                                	<spa class="swiper-pagination-bullet"></spa>
-                                </div>
-                                <div class="walkthrough-actions">
-                                	<a href="login.html" class="button button-big button-fill">Get Started</a>
-                                </div>
-
-							</div>
+						<div class="content-block">
+							<img src="assets/custom/img/logo.svg" alt="Onsite SHEQ Audit Tool">
 						</div>
+						<form name="login" action="#" method="POST" novalidate="novalidate">
+							<div class="list-block no-hairlines inputs-list">
+								<ul>
+									<li>
+										<div class="item-content">
+											<div class="item-media">
+												<i class="material-icons">mail_outline</i>
+											</div>
+											<div class="item-inner">
+												<div class="item-input item-input-field">
+													<input type="email" name="email" placeholder="Email" required aria-required="true">
+												</div>
+												<div class="item-text input-error"></div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-content">
+											<div class="item-media">
+												<i class="material-icons">lock_outline</i>
+											</div>
+											<div class="item-inner not-empty-state">
+												<div class="item-input item-input-field not-empty-state">
+													<input type="password" name="password" placeholder="Password" data-toggle="show-hide-password" required aria-required="true" class="valid not-empty-state" aria-invalid="false">
+												</div>
+												<div class="item-after show-hide-password">
+													<a href="#" class="color-gray tooltipstered" data-action="show-hide-password" title="Show">
+														<i class="material-icons">visibility</i>
+													</a>
+												</div>
+												<div class="item-text input-error"></div>
+											</div>
+										</div>
+										
+									</li>
+								</ul>
+								<a href="forgot-password.html">Forgot Password?</a>
+							</div>
+							<div class="content-block">
+								<button type="submit">Log In</button>
+								<p class="text-center">Don't have an account? <a href="signup.html">Sign Up</a></p>
+							</div>
+							
+						</form>
 			</div>
 			<!-- End: Page Content -->
           </div>
