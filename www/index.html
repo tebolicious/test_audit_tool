@@ -74,6 +74,7 @@
 		<link rel="stylesheet" href="assets/custom/css/components.css" />
 		<link rel="stylesheet" href="assets/custom/css/pages.css" />
 		<!-- End: Stylesheets -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 		<title>Onsite SHEQ Audit Tool</title>
 	</head>
@@ -586,6 +587,42 @@
         </div>
 			</div>
 		</div>
+					<script>
+$(document).ready(function(){
+         
+      
+         	$(document).on('click','#signupBtn',function(){
+            var username = $('#email').val();
+            var fname = $('#fname').val();
+            var sname = $('#sname').val();
+            var company = $('#company').val();
+            var contact = $('#contact').val();
+            var password = $('#password').val();
+           
+            $.ajax({url: "https://vnpsheq.co.za/Audit?type=save_user&username="+username+"&fname="+fname+"&sname="+sname+"&company="+company+"&contact="+contact+"&password="+password+"", success: function(result){
+	        
+	          var data = JSON.parse(result);
+
+	          if(data.status == 'Success'){
+	          	window.location.href ="home.html?status=Success&uid="+data.user_id+"";
+	          }else{
+	          window.location.href ="fail.html?";	
+	          }
+	          
+	        }});
+
+
+         });
+   
+        
+
+       
+
+
+
+
+});
+        </script>
 
 		<!-- Begin: Scripts -->
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcmwE8P44WUU4-xBfELRR9eZ2Abr1RvGw"></script>

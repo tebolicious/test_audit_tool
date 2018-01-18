@@ -512,144 +512,49 @@
 				<div class="pages navbar-fixed">
 					
 					<div data-page="login" class="page no-navbar">
-						<!-- Begin: Page Content -->
-            <div class="page-content">
-						<div class="content-block">
-							<img class="logo" src="assets/custom/img/logo.svg" alt="Onsite SHEQ Audit Tool">
-							<div class="text-center tagline">Onsite SHEQ Audit Tool Sign Up</div>
-						</div>
-						<form name="login" action="#" method="POST" novalidate="novalidate">
-							<div class="list-block no-hairlines inputs-list">
-								<ul>
-									<li>
-										<div class="item-content">
-											<div class="item-media">
-												<i class="material-icons">mail_outline</i>
-											</div>
-											<div class="item-inner">
-												<div class="item-input item-input-field">
-													<input type="email" name="email" id="email" placeholder="Email" required aria-required="true">
-												</div>
-												<div class="item-text input-error"></div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="item-content">
-											<div class="item-media">
-												<i class="material-icons">person_outline</i>
-											</div>
-											<div class="item-inner">
-												<div class="item-input item-input-field">
-													<input type="text" name="fname" id="fname" placeholder="First Name" required aria-required="true">
-												</div>
-												<div class="item-text input-error"></div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="item-content">
-											<div class="item-media">
-												<i class="material-icons">account_box</i>
-											</div>
-											<div class="item-inner">
-												<div class="item-input item-input-field">
-													<input type="text" name="sname" id="sname" placeholder="Surname" required aria-required="true">
-												</div>
-												<div class="item-text input-error"></div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="item-content">
-											<div class="item-media">
-												<i class="material-icons">account_balance</i>
-											</div>
-											<div class="item-inner">
-												<div class="item-input item-input-field">
-													<input type="text" name="company" id="company" placeholder="Company Name" required aria-required="true">
-												</div>
-												<div class="item-text input-error"></div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="item-content">
-											<div class="item-media">
-												<i class="material-icons">phone_android</i>
-											</div>
-											<div class="item-inner">
-												<div class="item-input item-input-field">
-													<input type="text" name="contact" id="contact" placeholder="Contact No" required aria-required="true">
-												</div>
-												<div class="item-text input-error"></div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="item-content">
-											<div class="item-media">
-												<i class="material-icons">lock_outline</i>
-											</div>
-											<div class="item-inner not-empty-state">
-												<div class="item-input item-input-field not-empty-state">
-													<input type="password" name="password" id="password" placeholder="Password" data-toggle="show-hide-password" required aria-required="true" class="valid not-empty-state" aria-invalid="false">
-												</div>
-												
-												<div class="item-text input-error"></div>
-											</div>
-										</div>
-										
-									</li>
-								</ul>
-								
-							</div>
-							<div class="content-block">
-								<a href="#" class="button button-big button-block button-fill" id="signupBtn">Sign Up</a>
-								<p class="text-center">Already have an account? <a href="login.html">Log In</a></p>
-							</div>
-							
-						</form>
-			</div>
-			<!-- End: Page Content -->
+				
+	<!-- Begin: Page Content -->
+  <div class="page-content">
+         <div class="content-block">
+			<div class="alert alert-success">
+				<div class="alert-media">
+					<i class="fa fa-fw fa-lg fa-check"></i>
+				</div>
+				<div class="alert-text">Account have been created successfully. An email with your login credentials its been sent to your email</div>
+		</div>
+		<div class="content-block">
+			<p>you can now start with the Audit Report.</p>
+		</div>
+        <div class="content-block">
+		<button type="submit" class="button button-big button-block button-fill">Start New Audit Project</button>
+		
+		</div>
+		<div class="content-block">
+		<button type="submit" class="button button-big button-block button-fill">Project History</button>
+		
+		</div>
+		<div class="content-block">
+		<button type="submit" class="button button-big button-block button-fill">Profile</button>
+		
+		</div>
+		<div class="content-block">
+		<button type="submit" class="button button-big button-block button-fill">Billing</button>
+		
+		</div>				
+
+
+
+
+	
+
+	</div>
+	<!-- End: Page Content -->
+
           </div>
         </div>
 			</div>
 		</div>
-			<script>
-$(document).ready(function(){
-         
-         $('#signupBtn').click(function(){
-            var username = $('#email').val();
-            var fname = $('#fname').val();
-            var sname = $('#sname').val();
-            var company = $('#company').val();
-            var contact = $('#contact').val();
-            var password = $('#password').val();
-           
-            $.ajax({url: "https://vnpsheq.co.za/Audit?type=save_user&username="+username+"&fname="+fname+"&sname="+sname+"&company="+company+"&contact="+contact+"&password="+password+"", success: function(result){
-	          var data = result;
-	          if(data.status == 'Success'){
-	          	alert("Account Created");
-                window.location.href ="home.html?status=Success$uid="+data.user_id+"";
-	          }else{
-	          console.log("Something went wrong");	
-	          }
-	          
-	        }});
 
-
-         });
-   
-        
-
-       
-
-
-
-
-});
-        </script>
 
 		<!-- Begin: Scripts -->
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcmwE8P44WUU4-xBfELRR9eZ2Abr1RvGw"></script>
