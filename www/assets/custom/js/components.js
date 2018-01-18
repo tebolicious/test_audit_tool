@@ -402,6 +402,7 @@ myApp.onPageInit('signup', function(page) {
             var company = $$('#company').val();
             var contact = $$('#contact').val();
             var password = $$('#password').val();
+            myApp.alert('Entered Username::'+username);
             $.ajax({url: "https://vnpsheq.co.za/Audit?type=save_user&username="+username+"&fname="+fname+"&sname="+sname+"&company="+company+"&contact="+contact+"&password="+password+"", success: function(result){
 	        
 	          var data = JSON.parse(result);
