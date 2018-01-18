@@ -13,4 +13,21 @@
     </author>
 
     <preference name="phonegap-version" value="cli-6.4.0" />
+    <access origin="*"/>
+<access origin="https://vnpsheq.co.za" />
+<!-- Added the following intents to support the removal of whitelist code from    base cordova to a plugin -->
+<!-- Whitelist configuration. Refer to       https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
+<plugin name="cordova-plugin-whitelist" source="npm"/ />
+<allow-intent href="http://*/*" />
+<allow-intent href="https://*/*" />
+<allow-intent href="tel:*" />
+<allow-intent href="sms:*" />
+<allow-intent href="mailto:*" />
+<allow-intent href="geo:*" />
+<platform name="android">
+    <allow-intent href="market:*" />
+</platform>
+<platform name="ios">
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
 </widget>
