@@ -1,4 +1,5 @@
-<div data-page="picker-modal" class="page">
+
+<div data-page="picker" class="page">
 	<!-- Begin: Navbar -->
 	<div class="navbar">
 		<div class="navbar-inner">
@@ -17,31 +18,86 @@
 
 		<div class="content-block">
 			<p>1. Is there evidence that senior management has had a strong leadership role in the development of the EMS?</p>
+			<p><a href="#" class="open-popup" data-popup=".popup-lipsum">Notes</a></p>
+
 		</div>
 
 		<div class="content-block">
-			<p><a href="#" data-picker=".picker-lipsum" class="open-picker">Notes</a></p>
+			<form name="feedback" action="#" method="POST" enctype="multipart/form-data">
+			<div class="list-block no-hairlines">
+				<ul>
+					<li class="align-top">
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-input">
+									<textarea class="resizable" name="observation" id="observation" placeholder="Write observation here"></textarea>
+								</div>
+							</div>
+						</div>
+					</li>
+				
+					<li lass="align-top">
+					<div class="item-content">
+						<div class="item-inner">
+							<div class="item-input">
+								<input type="text" id="picker-single-value" placeholder="Select Compliance Level Findind" readonly />
+							</div>
+						</div>
+					</div>
+				   </li>
+
+				
+					<li class="align-top">
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-input">
+									<textarea class="resizable" name="auditee" id="auditee" placeholder="Write  audit evidence"></textarea>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="align-top">
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-input">
+									<textarea class="resizable" name="auditor" id="auditor" onclick="showPicker()" placeholder="Evidence Documents(Optional)"></textarea>
+								</div>
+							</div>
+						</div>
+					</li>
+
+
+				</ul>
+			</div>
+			<div class="content-block">
+				<a href="#" class="button button-big button-block button-fill" id="createProjectBtn">Next Step</a>
+			</div>
+		</form>
+			
 		</div>
 
 	</div>
 	<!-- End: Page Content -->
 
-	<!-- Begin: Picker Modal -->
-	<div class="picker-modal picker-lipsum">
+
+	<!-- Begin: Popup -->
+	<div class="popup tablet-fullscreen popup-lipsum">
     <div class="toolbar">
       <div class="toolbar-inner">
         <div class="left"></div>
-        <div class="right">
-          <a href="#" class="link close-picker">Done</a>
+				<div class="right">
+          <a href="#" class="link close-popup">
+						<i class="material-icons">clear</i>
+					</a>
         </div>
       </div>
     </div>
-    <div class="picker-modal-inner">
-      <div class="content-block">
-        <p>NOTE: If the organization is upgrading from ISO 14001:2008 it is equally important that senior management get actively involved. Many systems in the past have been developed by consultants, individual managers, or staff employees. These systems usually met the requirements of the standard, but often the system developed did not recognize the unique culture of the organization or the strategic objectives of senior management. As a result, the EMS conformed but was not efficient, nor effective. Therefore if the system is to be efficient, effective and add value to the organization, it must be developed with the direct involvement and participation of top management.</p>
-      </div>
-    </div>
+		<div class="content-block">
+			<p>NOTE: If the organization is upgrading from ISO 14001:2008 it is equally important that senior management get actively involved. Many systems in the past have been developed by consultants, individual managers, or staff employees. These systems usually met the requirements of the standard, but often the system developed did not recognize the unique culture of the organization or the strategic objectives of senior management. As a result, the EMS conformed but was not efficient, nor effective. Therefore if the system is to be efficient, effective and add value to the organization, it must be developed with the direct involvement and participation of top management.</p>
+		
+		</div>
   </div>
-	<!-- End: Picker Modal -->
+	<!-- End: Popup -->
+
 
 </div>

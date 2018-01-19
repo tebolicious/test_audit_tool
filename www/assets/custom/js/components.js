@@ -795,7 +795,7 @@ myApp.onPageInit('picker', function(page) {
 			cols: [
 				{
           textAlign: 'center',
-          values: ['iPhone', 'iPhone 3G', 'iPhone 3GS', 'iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 5C', 'iPhone 6', 'iPhone 6 Plus', 'iPhone 6S', 'iPhone 6S Plus', 'iPhone SE', 'iPhone 7', 'iPhone 7 Plus']
+          values: [ 'COMPLIANT',  'OFI','MINOR N/C','MAJOR N/C']
 				}
 			]
 		});

@@ -10,7 +10,8 @@
 		<!-- End: Basic Meta Tags -->
 
 		<!-- Begin: Content Security Policy Meta Tags -->
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-eval' data: blob: filesystem: ws: gap: cdvfile: https://ssl.gstatic.com *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline'; connect-src * 'unsafe-inline'; child-src *;" /> <!-- Allows control over where the resources are loaded from -->
+		
+		<!-- Allows control over where the resources are loaded from -->
 		<!-- End: Content Security Policy Meta Tags -->
 
 		<!-- Begin: Android Meta Tags -->
@@ -75,6 +76,60 @@
 		<link rel="stylesheet" href="assets/custom/css/pages.css" />
 		<!-- End: Stylesheets -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
+<script>
+   /// var client = filestack.init('AHZ5Ep4J2SFCoGVztDCIgz');
+   var client = filestack.init('AlGz9I1OTzmYfgR2C7h2Wz');
+   
+    function showPicker() {
+
+        client.pick({
+            fromSources: ['local_file_system','facebook','instagram','webcam','gmail'],
+            imageMax: [371, 297],
+            imageMin: [371, 297],
+            imageDim: [371, 297],
+            transformations: { crop: { aspectRatio: 1,force: true} }
+            
+        }).then(function(result) {
+            console.log(JSON.stringify(result.filesUploaded));
+            data = JSON.parse(JSON.stringify(result.filesUploaded));
+            console.log(data[0]['filename']);
+            console.log(data[0]['source']);
+            console.log(data[0]['url']);
+            var imageUrl = data[0]['url'];
+            //save image url to database
+            var queryString = {'filename' : data[0]['filename'] , 'source':data[0]['source'],'url':data[0]['url']};
+            var siteurl = "http://african.singles/";
+            $.ajax(
+                    {
+                        type: 'POST',
+                        url: siteurl+'Upload/upload_image',
+                        data: queryString,
+                        success: function(data){
+                            // put result data into "obj"
+                            var obj = jQuery.parseJSON(data);
+                            if(obj.status == 'Upload successfully'){
+                             $('#upload_text').css('color','green');
+                             $('#upload_text').text(obj.status);
+                             $('.profile-pic-circle').css('background-image','url('+imageUrl+')')
+                             $('#upload_icon').hide();
+                            console.log(obj.status);    
+                            }
+                            
+                        },
+
+                       error: function(xhr, textStatus, errorThrown){
+                            console.log(errorThrown);
+                        }
+                    }
+                );
+
+        });
+
+    }
+
+   
+</script>
 
 		<title>Onsite SHEQ Audit Tool</title>
 	</head>
