@@ -204,6 +204,57 @@ myApp.onPageInit('calendar', function(page) {
 		input: '.page[data-page=calendar] #calendar-disabled-dates'
 	});
 
+	$$('#createProjectBtn').on('click', function(e) {
+		e.preventDefault();
+		    var project_name = $$('#project_name').val();
+            var department = $$('#department').val();
+            var area = $$('#area').val();
+            var date = $$('#calendar-custom-date-format').val();
+            var auditee = $$('#auditee').val();
+            var auditor = $$('#auditor').val();
+            if(project_name == ''){
+            	myApp.alert('Project name required.', 'Error');
+            	return;
+            }
+            if(department == ''){
+            	myApp.alert('Department name required.', 'Error');
+            	return;
+            }
+            if(area == ''){
+            	myApp.alert('Area name required.', 'Error');
+            	return;
+            }
+            if(date == ''){
+            	myApp.alert('Date  required.', 'Error');
+            	return;
+            }
+            if(auditee == ''){
+            	myApp.alert('Auditees names required.', 'Error');
+            	return;
+            }
+            if(auditor == ''){
+            	myApp.alert('Auditor names required.', 'Error');
+            	return;
+            }
+            var user_id = localStorage.getItem('user_id');
+            $.ajax({url: "https://vnpsheq.co.za/Audit/create_project?user_id="+user_id+"&project_name="+project_name+"&department="+department+"&area="+area+"&date="+date+"&auditee="+auditee+"&auditor="+auditor+"", success: function(result){
+	        
+	          var data = JSON.parse(result);
+
+	          if(data.status == 'Success'){
+	          	localStorage.setItem('project_id', data.project_id); 
+	          	window.location.href ="project-started.html?status=Success&uid="+data.project_id+"";
+	          }else{
+	          window.location.href ="fail.html?";	
+	          }
+	          
+	        }});            
+		
+	});
+
+
+
+
 });
 
 /*
@@ -402,12 +453,14 @@ myApp.onPageInit('signup', function(page) {
             var company = $$('#company').val();
             var contact = $$('#contact').val();
             var password = $$('#password').val();
-            myApp.alert('Entered Username::'+username);
             $.ajax({url: "https://vnpsheq.co.za/Audit?type=save_user&username="+username+"&fname="+fname+"&sname="+sname+"&company="+company+"&contact="+contact+"&password="+password+"", success: function(result){
 	        
 	          var data = JSON.parse(result);
 
 	          if(data.status == 'Success'){
+	          	localStorage.setItem('loggin', 'true');
+	          	localStorage.setItem('user_id', data.user_id);  
+                
 	          	window.location.href ="home.html?status=Success&uid="+data.user_id+"";
 	          }else{
 	          window.location.href ="fail.html?";	
